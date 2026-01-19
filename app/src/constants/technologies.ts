@@ -12,6 +12,9 @@ import {
   SiGit,
   SiGraphql,
   SiMongodb,
+  SiPhp,
+  SiSupabase,
+  SiHtml5,
 } from 'react-icons/si';
 
 export const technologies = [
@@ -86,5 +89,29 @@ export const technologies = [
     icon: SiGit,
     color: '#F05032',
     gradient: 'from-red-600 to-orange-500'
+  },
+  {
+    name: 'PHP',
+    icon: SiPhp,
+    color: '#777BB4',
+    gradient: 'from-purple-600 to-purple-400'
+  },
+  {
+    name: 'Supabase',
+    icon: SiSupabase,
+    color: '#3ECF8E',
+    gradient: 'from-green-400 to-green-300'
+  },
+  {
+    name: 'HTML5',
+    icon: SiHtml5,
+    color: '#E34F26',
+    gradient: 'from-orange-500 to-orange-400'
+  },
+  {
+    name: 'CSS3',
+    icon: SiHtml5,
+    color: '#1572B6',
+    gradient: 'from-blue-600 to-blue-400'
   }
 ];
