@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
@@ -40,7 +41,7 @@ export default function ProjectClient({ project }: ProjectPageClientProps) {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background via-background to-muted/5">
+    <main className="min-h-screen bg-linear-to-b from-background via-background to-muted/5">
       {/* Background decorativo */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
