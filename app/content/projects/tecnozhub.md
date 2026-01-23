@@ -10,7 +10,7 @@ featured: true
 
 # Tecnologias
 techStack:
-  frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "VERCEL"]
+  frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"]
   backend: ["Node.js",]
   tools: ["Git", "Vercel"]
   all: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js","Git", "Vercel"]
