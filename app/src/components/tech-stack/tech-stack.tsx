@@ -108,14 +108,14 @@ const TechStack = ({
                 className="group relative"
               >
                 <div className={`relative ${compact ? 'p-5' : 'p-5'} rounded-xl 
-                              bg-gradient-to-br from-background to-muted/30 
+                              bg-linear-to-br from-background to-muted/30 
                               border border-border/50 shadow-sm hover:shadow-md 
                               hover:border-primary/30 transition-all duration-300
                               flex flex-col items-center justify-center gap-2
                               ${compact ? 'min-w-[80px]' : 'min-w-[100px]'}`}
                 >
                   {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-secondary/0 
+                  <div className="absolute inset-0 rounded-xl bg-linear-to-r from-primary/0 via-primary/5 to-secondary/0 
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Icon */}
@@ -136,7 +136,7 @@ const TechStack = ({
                   
                   {/* Gradient line */}
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 
-                                w-1/2 h-0.5 bg-gradient-to-r from-primary/0 via-primary/50 to-secondary/0
+                                w-1/2 h-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-secondary/0
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
