@@ -15,6 +15,8 @@ import {
   SiPhp,
   SiSupabase,
   SiHtml5,
+  SiVercel,
+  SiCss3
 } from 'react-icons/si';
 
 export const technologies = [
@@ -110,8 +112,14 @@ export const technologies = [
   },
   {
     name: 'CSS3',
-    icon: SiHtml5,
+    icon: SiCss3,
     color: '#1572B6',
     gradient: 'from-blue-600 to-blue-400'
-  }
-];
+  },
+  {
+    name: 'Vercel',
+    icon: SiVercel,
+    color: '#000000',
+    gradient: 'from-gray-900 to-gray-700'
+  },
+  ];
