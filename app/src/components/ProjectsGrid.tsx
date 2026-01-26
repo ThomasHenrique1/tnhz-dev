@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { motion } from "framer-motion";
@@ -77,7 +78,7 @@ export default function ProjectsGrid({ projects }: Props) {
             {/* Efeito de destaque no hover */}
             <div className="relative group">
               {/* Glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 
+              <div className="absolute -inset-1 bg-linear-to-r from-primary/20 via-secondary/20 to-accent/20 
                             rounded-2xl blur opacity-0 group-hover:opacity-100 
                             transition-opacity duration-500" />
 
@@ -93,7 +94,7 @@ export default function ProjectsGrid({ projects }: Props) {
                 {frontmatter.featured && (
                   <div className="absolute top-3 right-3 z-20">
                     <div className="flex items-center gap-1 px-2 py-1 rounded-full 
-                                  bg-gradient-to-r from-primary to-secondary 
+                                  bg-linear-to-r from-primary to-secondary 
                                   text-xs font-medium text-primary-foreground">
                       <Sparkles className="w-3 h-3" />
                       <span>Destaque</span>
@@ -114,7 +115,7 @@ export default function ProjectsGrid({ projects }: Props) {
           className="text-center py-16"
         >
           <div className="inline-flex items-center justify-center w-20 h-20 
-                        rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 
+                        rounded-full bg-linear-to-br from-primary/10 to-secondary/10 
                         mb-6">
             <Sparkles className="w-10 h-10 text-primary/50" />
           </div>
