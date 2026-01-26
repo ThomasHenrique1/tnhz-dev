@@ -19,8 +19,8 @@ export function GradientText({ children, className = "", delay = 0 }: GradientTe
         duration: 3,
         delay,
       }}
-      className={`bg-gradient-to-r from-primary via-secondary to-accent 
-                  bg-clip-text text-transparent bg-[length:200%_auto] 
+      className={`bg-linear-to-r from-primary via-secondary to-accent 
+                  bg-clip-text text-transparent bg-size-[200%_auto] 
                   ${className}`}
     >
       {children}
