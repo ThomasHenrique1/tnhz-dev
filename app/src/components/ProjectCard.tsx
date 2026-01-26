@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Link from "next/link";
@@ -58,7 +59,7 @@ export default function ProjectCard({ slug, project }: Props) {
           />
 
           {/* Overlay gradiente */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent 
+          <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent 
                         opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           {/* Badge de destaque */}
@@ -185,7 +186,7 @@ export default function ProjectCard({ slug, project }: Props) {
         </div>
 
         {/* Efeito de brilho no hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-secondary/0 
+        <div className="absolute inset-0 bg-linear-to-r from-primary/0 via-primary/5 to-secondary/0 
                       opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none 
                       rounded-lg" />
       </Card>
