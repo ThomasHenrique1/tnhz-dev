@@ -137,23 +137,25 @@ function normalizeFrontmatter(data: any): ProjectFrontmatter {
     normalized.links.github = normalized.github;
   }
   
-  // 3. Normalizar media (compatibilidade com estrutura antiga/nova)
+  // 3. Normalizar media compatibilidade com estrutura
   if (!normalized.media) {
     normalized.media = {};
   }
-  
-  if (normalized.cover && !normalized.media.cover) {
-    normalized.media.cover = normalized.cover;
-    
-    // Se não houver gallery, criar uma com a cover
-    if (!normalized.media.gallery || normalized.media.gallery.length === 0) {
-      normalized.media.gallery = [{
-        src: normalized.cover,
-        alt: normalized.title,
-        caption: "Imagem principal do projeto"
-      }];
-    }
-  }
+  normalized.media.cover = normalized.media.cover || normalized.cover ||  "/images/placeholder.jpg";
+
+  if (normalized.media.cover && !normalized.cover) {
+  normalized.cover = normalized.media.cover;
+}
+
+// Se não houver gallery e tiver uma cover, criar uma gallery com ela
+if (normalized.media.cover && 
+    (!normalized.media.gallery || normalized.media.gallery.length === 0)) {
+  normalized.media.gallery = [{
+    src: normalized.media.cover,  // Pode usar normalized.cover também 
+    alt: normalized.title,
+    caption: "Imagem principal do projeto"
+  }];
+}
   
   // 4. Garantir que challenges tenha a estrutura correta
   if (normalized.challenges && Array.isArray(normalized.challenges)) {
