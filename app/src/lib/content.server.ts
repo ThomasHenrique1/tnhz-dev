@@ -95,8 +95,8 @@ export async function getProjectSlugs(): Promise<string[]> {
   const fs = await import("fs/promises");
   const files = await fs.readdir(PROJECTS_DIR);
   return files
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(".md", ""));
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => f.replace(".mdx", ""));
 }
 
 // Função auxiliar para normalizar o frontmatter
@@ -183,7 +183,7 @@ if (normalized.media.cover &&
 // Esta função só pode ser usada em Server Components
 export async function getProjectBySlug(slug: string) {
   const fs = await import("fs/promises");
-  const filePath = path.join(PROJECTS_DIR, `${slug}.md`);
+  const filePath = path.join(PROJECTS_DIR, `${slug}.mdx`);
   const raw = await fs.readFile(filePath, "utf-8");
   const { data, content } = matter(raw);
   const processed = await remark().use(html).process(content);
