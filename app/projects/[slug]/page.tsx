@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/error-boundaries */
 import { notFound } from "next/navigation";
 import { ArrowLeft, ImageIcon } from "lucide-react";
 import { getProjectBySlug, getProjectSlugs } from "@/app/src/lib/content.server";
@@ -11,6 +11,9 @@ import { TechStackDisplay } from "@/app/src/components/projects/[slug]/TechStack
 import { ProjectLinks } from "@/app/src/components/projects/[slug]/ProjectLinks";
 import { ProjectGallery } from "@/app/src/components/projects/[slug]/ProjectGallery";
 import { ProjectHighlights } from "@/app/src/components/projects/[slug]/ProjectHighlights";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { mdxComponents } from "@/app/src/components/mdx/mdx-components";
+
 
 type Props = {
   params: Promise<{
@@ -30,8 +33,8 @@ const getGalleryImages = (frontmatter: any) => {
   }
   // Fallback para estrutura antiga (apenas cover)
   if (frontmatter.cover) {
-    return [{ 
-      src: frontmatter.cover, 
+    return [{
+      src: frontmatter.cover,
       alt: frontmatter.title,
       caption: "Imagem principal do projeto"
     }];
@@ -76,7 +79,7 @@ export default async function ProjectPage({ params }: Props) {
 
   try {
     const { frontmatter, contentHtml } = await getProjectBySlug(slug);
-    
+
     // Preparar dados para compatibilidade
     const galleryImages = getGalleryImages(frontmatter);
     const allTags = getAllTags(frontmatter);
@@ -125,9 +128,9 @@ export default async function ProjectPage({ params }: Props) {
           {/* Imagem principal (cover) */}
           {frontmatter.media?.cover && (
             <section className="animate-fade-up animate-delay-400">
-              <ProjectHeroImage 
-                src={frontmatter.media.cover} 
-                alt={frontmatter.title} 
+              <ProjectHeroImage
+                src={frontmatter.media.cover}
+                alt={frontmatter.title}
               />
             </section>
           )}
@@ -136,7 +139,7 @@ export default async function ProjectPage({ params }: Props) {
           {allTags.length > 0 && (
             <section className="mb-12 animate-fade-up animate-delay-300">
               <div className="bg-gradient-to-b from-card to-card/50 rounded-2xl p-8 border border-border/50 shadow-lg">
-                <TechStackDisplay 
+                <TechStackDisplay
                   tags={allTags}
                   title="Stack Tecnológico do Projeto"
                   columns={7}
@@ -147,12 +150,12 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
-          
+
 
           {/* Destaques e desafios */}
           {(frontmatter.highlights || frontmatter.challenges) && (
-            <section className="mb-12 animate-fade-up animate-delay-500">
-              <ProjectHighlights 
+            <section className="mb-18 animate-fade-up animate-delay-500">
+              <ProjectHighlights
                 highlights={frontmatter.highlights}
                 challenges={frontmatter.challenges}
               />
@@ -160,30 +163,76 @@ export default async function ProjectPage({ params }: Props) {
           )}
 
           {/* Conteúdo principal */}
-          <section 
-            className="scroll-mt-20 animate-fade-up animate-delay-600"
+          <section
             id="content"
+            className="mt-16 scroll-mt-20 animate-in fade-in slide-in-from-bottom-5 duration-700"
           >
-            <article
-              className="prose prose-lg prose-gray dark:prose-invert max-w-none mb-12
-                        prose-headings:font-bold prose-headings:text-foreground prose-headings:scroll-mt-20
-                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                        prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
-                        prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-3
-                        prose-p:text-foreground/85 prose-p:leading-relaxed prose-p:mb-6
-                        prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                        prose-strong:font-bold prose-strong:text-foreground
-                        prose-code:bg-muted prose-code:text-foreground prose-code:px-2 prose-code:py-1 prose-code:rounded-lg prose-code:text-sm prose-code:font-mono
-                        prose-pre:bg-gradient-to-br from-muted to-muted/80 prose-pre:border prose-pre:border-border prose-pre:rounded-2xl prose-pre:shadow-lg
-                        prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-primary/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl
-                        prose-ul:my-6 prose-ol:my-6 prose-li:my-2 prose-li:marker:text-primary prose-li:marker:font-bold
-                        prose-img:rounded-2xl prose-img:border prose-img:border-border prose-img:shadow-xl prose-img:my-8
-                        prose-table:w-full prose-table:border prose-table:border-border prose-table:rounded-xl prose-table:overflow-hidden
-                        prose-th:bg-gradient-to-r from-muted to-muted/80 prose-th:font-bold prose-th:p-4
-                        prose-td:p-4 prose-td:border-t prose-td:border-border
-                        prose-hr:border-border prose-hr:my-12"
-              dangerouslySetInnerHTML={{ __html: contentHtml }}
-            />
+            <article className="
+                // Container principal com gradiente sutil
+                relative
+                bg-gradient-to-br from-card/30 via-card/20 to-transparent
+                rounded-3xl
+                p-8 md:p-12
+                border border-border/50
+                shadow-2xl shadow-primary/5
+                backdrop-blur-sm
+                overflow-hidden
+                
+                // Animações
+                transition-all duration-500
+                hover:shadow-3xl hover:shadow-primary/10
+                hover:border-border/70
+                hover:bg-gradient-to-br from-card/40 via-card/30 to-transparent
+                
+                // Efeitos decorativos
+                before:absolute before:inset-0 
+                before:bg-gradient-to-r before:from-transparent before:via-primary/5 before:to-transparent
+                before:opacity-0 before:hover:opacity-100
+                before:transition-opacity before:duration-700
+                
+                after:absolute after:top-0 after:right-0
+                after:w-32 after:h-32
+                after:bg-gradient-to-bl after:from-primary/10 after:to-transparent
+                after:rounded-full after:blur-3xl
+                after:-translate-y-16 after:translate-x-16
+                after:opacity-50
+                after:animate-pulse-slow
+              ">
+
+              {/* Decoração adicional */}
+              <div className="absolute -left-4 top-1/4 w-2 h-16 bg-gradient-to-b from-primary to-secondary rounded-full" />
+
+              {/* Conteúdo MDX */}
+              <div className="relative z-10">
+                <MDXRemote
+                  source={contentHtml}
+                  components={mdxComponents}
+                />
+              </div>
+
+              {/* Indicador de fim do artigo */}
+              <div className="
+                mt-12 pt-8
+                border-t border-border/30
+                flex items-center justify-center
+                text-sm text-muted-foreground
+                gap-3
+                animate-in fade-in duration-1000
+                ">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+                <span className="
+                    px-4 py-2 
+                    rounded-full
+                    bg-gradient-to-r from-background to-muted/30
+                    border border-border/30
+                    text-xs font-medium
+                    tracking-wide
+                  ">
+                  FIM DO ARTIGO
+                </span>
+                <div className="h-px w-12 bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+              </div>
+            </article>
           </section>
 
           {/* Galeria de imagens */}
