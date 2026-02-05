@@ -26,18 +26,18 @@ export function HeroSection() {
             Desenvolvedor de <span className="text-primary">Software</span>
           </h1>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Atuo no desenvolvimento de sistemas web completos, com foco em lógica de negócio,
-              arquitetura, integração de dados e código sustentável. Meu objetivo é construir
-              software funcional, escalável e fácil de manter.
-            </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Tenho perfil generalista, atuando do banco de dados à interface, com foco em
-              sistemas bem organizados, previsíveis e preparados para evoluir com o produto.
-            </p>
-          </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+  <p className="text-xl text-muted-foreground leading-relaxed">
+    Atuo no desenvolvimento de sistemas web completos, com foco em lógica de negócio,
+    arquitetura e integração de dados, priorizando código sustentável e fácil de manter.
+  </p>
+
+  <p className="text-xl text-muted-foreground leading-relaxed">
+    Tenho perfil generalista, atuando do banco de dados à interface, construindo sistemas
+    organizados, previsíveis e preparados para evoluir com o produto.
+  </p>
+</div>
+
         </motion.div>
       </div>
     </section>
