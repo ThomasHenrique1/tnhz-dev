@@ -1,60 +1,67 @@
 ---
 title: "TecnozHub"
-short: "Uma plataforma completa para desenvolvedores modernos"
-description: "Descrição mais detalhada do projeto com pelo menos 2-3 linhas explicando o propósito e funcionalidades principais."
-date: "2024-01-01"
-duration: "2 meses"
+short: "E-commerce fictício de hardware para fins demonstrativos"
+description: "TecnozHub é um projeto pessoal que simula um e-commerce de peças de hardware. A aplicação permite cadastro de usuários, navegação por produtos, carrinho de compras e finalização de pedidos, sem transações reais, com foco em arquitetura, regras de negócio e boas práticas."
+date: "2025-07-15"
+duration: "5 meses"
 team: "Solo"
-status: "Concluído"
+status: "Em desenvolvimento"
 featured: true
 
 # Tecnologias
 techStack:
-  frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"]
-  backend: ["Node.js",]
-  tools: ["Git", "Vercel"]
-  all: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js","Git", "Vercel"]
+  frontend: ["React", "Next.js", "JavaScript", "Tailwind CSS"]
+  backend: ["Node.js"]
+  tools: ["Git", "Supabase", "Vercel"]
+  all: ["React", "Next.js", "JavaScript", "Tailwind CSS", "Node.js", "Supabase", "Git", "Vercel"]
 
 # Imagens e mídia
 media:
-  cover: "/images/projects/tecnozhub/cover.png"
+  cover: "/images/projects/tecnozhub/image.png"
   gallery:
-    - src: "/images/projects/tecnozhub/screenshot-1.png"
+    - src: "/images/projects/tecnozhub/Produtos.png"
       alt: "Página inicial do TecnozHub"
-      caption: "Design moderno da página inicial"
-    - src: "/images/projects/tecnozhub/screenshot-2.png"
-      alt: "Dashboard de usuário"
-      caption: "Dashboard com métricas e ferramentas"
-    - src: "/images/projects/tecnozhub/screenshot-3.png"
-      alt: "Interface mobile"
-      caption: "Versão responsiva para dispositivos móveis"
+      caption: "Página inicial com listagem de produtos"
+    - src: "/images/projects/tecnozhub/CarrinhoDeCompras.png"
+      alt: "Carrinho de compras"
+      caption: "Carrinho com atualização dinâmica"
+    - src: "/images/projects/tecnozhub/PainelAdminstrativo.png"
+      alt: "Painel administrativo"
+      caption: "Painel de administração de produtos"
 
 # Links
 links:
   github: "https://github.com/ThomasHenrique1/tecnoz-hub"
-  live: "tecnozhub.vercel.app"
-  figma: "https://figma.com/design/..."
-  documentation: "https://docs.tecnozhub.com"
+  live: "https://tecnozhub.vercel.app"
 
-# Destaques e conquistas
+# Destaques
 highlights:
-  - "Desenvolvido com Next.js 14 e App Router"
-  - "100% responsivo em todos os dispositivos"
-  - "Integração com múltiplas APIs"
+  - "Arquitetura baseada em Next.js com App Router"
+  - "Autenticação e controle de acesso com Supabase"
+  - "Carrinho de compras com atualização em tempo real"
+  - "Painel administrativo com CRUD de produtos"
+  - "Uso de RLS (Row Level Security) no banco de dados"
 
 # Desafios e soluções
 challenges:
-  - problem: "Otimização de performance em tempo real"
-    solution: "Implementação de cache estratégico com Redis"
-  - problem: "Gerenciamento de estado complexo"
-    solution: "Arquitetura com Zustand e React Query"
+  - problem: "Controle de acesso entre usuários comuns e administradores"
+    solution: "Implementação de regras de autorização usando JWT e políticas de RLS no Supabase"
+  - problem: "Sincronização do carrinho entre páginas"
+    solution: "Gerenciamento de estado global para refletir alterações imediatamente na interface"
+  - problem: "Atualização de estoque após pedidos"
+    solution: "Processamento no backend com validações e rollback manual"
 
-# Metadados adicionais
+# Metadados
 metadata:
-  category: "Plataforma Web"
+  category: "E-commerce"
   complexity: "Intermediário"
   client: "Projeto Pessoal"
   role: "Desenvolvedor Full Stack"
 ---
 
-O projeto TecnozHub foi desenvolvido para simular um e-commerce para venda de peças de equipamento de baixa e alta performance, onde a aplicação permite o usuario criar uma conta e adquirir produtos do site , somente como mostruario , sem aquisição real.
+O **TecnozHub** é um projeto pessoal desenvolvido com o objetivo de simular um e-commerce de peças de hardware de baixa e alta performance.
+
+A aplicação permite que usuários criem conta, naveguem pelos produtos, adicionem itens ao carrinho e realizem pedidos apenas para fins demonstrativos, sem transações reais.
+
+O foco do projeto está na **estrutura da aplicação**, **regras de negócio**, **controle de acesso**, **integração com banco de dados** e **organização de um fluxo completo de e-commerce**, servindo como portfólio técnico e ambiente de aprendizado prático.
+

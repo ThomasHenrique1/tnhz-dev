@@ -96,7 +96,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         {/* Container principal com animação de entrada */}
-        <div className="container mx-auto px-4 pt-8 md:pt-12 pb-16 max-w-5xl animate-in fade-in duration-700">
+        <div className="container mx-auto px-4 pt-8 md:pt-12 pb-16 max-w-5xl animate-in fade-in duration-700 gap-20">
           {/* Botão de voltar flutuante */}
           <div className="sticky top-4 z-20 mb-8 animate-fade-down">
             <Button
@@ -165,7 +165,7 @@ export default async function ProjectPage({ params }: Props) {
           {/* Conteúdo principal */}
           <section
             id="content"
-            className="mt-16 scroll-mt-20 animate-in fade-in slide-in-from-bottom-5 duration-700"
+            className="mt-16 mb-24 scroll-mt-20 animate-in fade-in slide-in-from-bottom-5 duration-700"
           >
             <article className="
                 // Container principal com gradiente sutil
@@ -203,7 +203,7 @@ export default async function ProjectPage({ params }: Props) {
               <div className="absolute -left-4 top-1/4 w-2 h-16 bg-gradient-to-b from-primary to-secondary rounded-full" />
 
               {/* Conteúdo MDX */}
-              <div className="relative z-10">
+              <div className="relative z-10 mt-12 ">
                 <MDXRemote
                   source={contentHtml}
                   components={mdxComponents}
@@ -216,7 +216,7 @@ export default async function ProjectPage({ params }: Props) {
                 border-t border-border/30
                 flex items-center justify-center
                 text-sm text-muted-foreground
-                gap-3
+                gap-5
                 animate-in fade-in duration-1000
                 ">
                 <div className="h-px w-12 bg-gradient-to-r from-transparent via-border/50 to-transparent" />
