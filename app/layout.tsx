@@ -18,6 +18,11 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "tnhz.dev — Portfólio",
   description: "Portfólio técnico — projetos, case studies e contato.",
+   icons: {
+    icon: "/ICON.png",
+    shortcut: "/ICON.png",
+    apple: "/ICON.png",
+  },
 };
 
 export default function RootLayout({
@@ -40,7 +45,7 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main className="grow">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
