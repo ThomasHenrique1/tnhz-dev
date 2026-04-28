@@ -20,7 +20,7 @@ interface ContactFormProps {
     email: string;
     subject: string;
     message: string;
-    hp: string;
+    _gotcha: string;
   };
   loading: boolean;
   status: "idle" | "success" | "error";
@@ -47,7 +47,7 @@ export default function ContactForm({
         <CardContent>
           <form onSubmit={onSubmit} className="space-y-6">
             <StatusMessage status={status} />
-            <HoneypotField value={formData.hp} onChange={onChange} />
+            <HoneypotField value={formData._gotcha} onChange={onChange} />
             
             <div className="grid md:grid-cols-2 gap-6">
               <FormField
