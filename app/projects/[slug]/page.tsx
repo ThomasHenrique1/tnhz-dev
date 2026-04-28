@@ -119,8 +119,6 @@ export default async function ProjectPage({ params }: Props) {
             featured={frontmatter.featured}
             status={frontmatter.status}
             date={frontmatter.date}
-            duration={frontmatter.duration}
-            team={frontmatter.team}
             tags={allTags}
             metadata={frontmatter.metadata}
           />
@@ -144,7 +142,6 @@ export default async function ProjectPage({ params }: Props) {
                   title="Stack Tecnológico do Projeto"
                   columns={7}
                   compact={false}
-                  showAllTechnologies={false}
                 />
               </div>
             </section>
