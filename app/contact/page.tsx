@@ -1,17 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send, Loader2 } from "lucide-react";
 import ContactHeader from "@/app/src/components/contact/ContactHeader";
 import ContactInfo from "@/app/src/components/contact/ContactInfo";
 import ContactForm from "@/app/src/components/contact/ContactForm";
-import StatusMessage from "@/app/src/components/contact/StatusMessage";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,8 +12,9 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
-    hp: ""
+    _gotcha: ""
   });
+
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -35,10 +29,13 @@ export default function ContactPage() {
     setStatus("idle");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/mojyanor", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
 
       if (!res.ok) throw new Error();
@@ -49,9 +46,9 @@ export default function ContactPage() {
         email: "",
         subject: "",
         message: "",
-        hp: ""
+        _gotcha: ""
       });
-      
+
       setTimeout(() => setStatus("idle"), 5000);
     } catch {
       setStatus("error");
