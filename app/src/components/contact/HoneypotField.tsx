@@ -7,7 +7,7 @@ export default function HoneypotField({ value, onChange }: HoneypotFieldProps) {
   return (
     <input
       type="text"
-      name="hp"
+      name="_gotcha"
       value={value}
       onChange={onChange}
       className="hidden"
