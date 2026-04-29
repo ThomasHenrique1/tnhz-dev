@@ -1,57 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export const HeroBackground = () => {
   return (
     <>
-      {/* Fundo base escuro */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background" />
-      
-      {/* Gradiente principal animado */}
-      <motion.div
-        animate={{
-          scale: [1, 1.1, 1],
-          rotate: [0, 90, 180, 270, 360],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 30,
-          ease: "linear"
-        }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10 rounded-full blur-3xl"
-      />
-      
-      {/* Pontos de luz */}
-      <motion.div
-        animate={{
-          opacity: [0.2, 0.5, 0.2],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 5,
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-2xl"
-      />
-      
-      <motion.div
-        animate={{
-          opacity: [0.3, 0.6, 0.3],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 7,
-          delay: 1,
-          ease: "easeInOut"
-        }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-2xl"
-      />
-      
-      {/* Efeito de brilho central */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background" />
+      {/* Base */}
+      <div className="absolute inset-0 bg-background" />
+
+      {/* Gradiente principal bem suave */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(120,120,255,0.08),transparent_70%)]" />
+
+      {/* Iluminação secundária (bem sutil) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_100%,rgba(0,200,255,0.06),transparent_70%)]" />
+
+      {/* Fade natural */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
     </>
   );
-};
+}; 
