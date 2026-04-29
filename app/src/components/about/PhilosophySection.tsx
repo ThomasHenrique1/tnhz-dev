@@ -18,22 +18,26 @@ const principles = [
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: "Clareza Técnica",
-    description: "Arquiteturas simples, código previsível e decisões bem justificadas.",
+    description:
+      "Estrutura clara entre frontend, backend e banco de dados, facilitando leitura e manutenção do sistema.",
   },
   {
     icon: <Target className="w-6 h-6" />,
     title: "Foco em Produto",
-    description: "Funcionalidade vem antes da estética. Interface serve ao sistema.",
+    description:
+      "Interfaces e funcionalidades pensadas para resolver o problema do usuário e melhorar o fluxo do sistema.",
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Confiabilidade",
-    description: "Validação de dados, controle de acesso e segurança desde o início.",
+    description:
+      "Validação de dados, controle de acesso e regras de negócio implementadas no backend.",
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Manutenibilidade",
-    description: "Código pensado para evoluir, não apenas para funcionar hoje.",
+    description:
+      "Código modular e organizado para facilitar evolução do sistema ao longo do tempo.",
   },
 ];
 
@@ -47,12 +51,11 @@ export function PhilosophySection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Como eu penso <span className="text-primary">software</span>
-          </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+               Princípios de <span className="text-primary">desenvolvimento</span>
+             </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Prefiro sistemas bem estruturados a soluções rápidas. Código deve ser legível,
-            previsível e preparado para mudanças futuras.
+            Busco construir sistemas organizados, previsíveis e preparados para evoluir com o produto.
           </p>
         </motion.div>
 
