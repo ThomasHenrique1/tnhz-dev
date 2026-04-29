@@ -1,125 +1,99 @@
-// app/src/constants/technologies.ts
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiNodedotjs, 
-  SiTailwindcss, 
-  SiPostgresql,
-  SiJavascript,
-  SiPython,
-  SiDocker,
-  SiGit,
-  SiGraphql,
-  SiMongodb,
-  SiPhp,
-  SiSupabase,
-  SiHtml5,
-  SiVercel,
-  SiCss3
-} from 'react-icons/si';
-
-export const technologies = [
+  export const technologies = [
+  // ================= FRONTEND =================
   {
     name: 'React',
-    icon: SiReact,
+    icon: '/icons/react.svg',
     color: '#61DAFB',
-    gradient: 'from-blue-400 to-cyan-400'
+    gradient: 'from-cyan-400 to-blue-400'
   },
   {
     name: 'Next.js',
-    icon: SiNextdotjs,
-    color: '#000000',
+    icon: '/icons/nextdotjs.svg',
+    color: '#FFFFFF',
     gradient: 'from-gray-900 to-gray-700'
   },
   {
     name: 'TypeScript',
-    icon: SiTypescript,
+    icon: '/icons/typescript.svg',
     color: '#3178C6',
     gradient: 'from-blue-600 to-blue-400'
   },
   {
-    name: 'Node.js',
-    icon: SiNodedotjs,
-    color: '#339933',
-    gradient: 'from-green-600 to-green-400'
-  },
-  {
     name: 'JavaScript',
-    icon: SiJavascript,
+    icon: '/icons/javascript.svg',
     color: '#F7DF1E',
     gradient: 'from-yellow-500 to-yellow-300'
   },
   {
     name: 'Tailwind CSS',
-    icon: SiTailwindcss,
+    icon: '/icons/tailwindcss.svg',
     color: '#06B6D4',
     gradient: 'from-cyan-500 to-blue-500'
   },
   {
-    name: 'PostgreSQL',
-    icon: SiPostgresql,
-    color: '#4169E1',
-    gradient: 'from-blue-600 to-blue-500'
+    name: 'Vite',
+    icon: '/icons/vite.svg',
+    color: '#646CFF',
+    gradient: 'from-purple-600 to-indigo-500'
   },
+
+  // ================= BACKEND =================
   {
-    name: 'Python',
-    icon: SiPython,
-    color: '#3776AB',
-    gradient: 'from-blue-700 to-blue-500'
-  },
-  {
-    name: 'Docker',
-    icon: SiDocker,
-    color: '#2496ED',
-    gradient: 'from-blue-500 to-blue-400'
-  },
-  {
-    name: 'GraphQL',
-    icon: SiGraphql,
-    color: '#E10098',
-    gradient: 'from-pink-600 to-purple-600'
-  },
-  {
-    name: 'MongoDB',
-    icon: SiMongodb,
-    color: '#47A248',
-    gradient: 'from-green-600 to-green-500'
-  },
-  {
-    name: 'Git',
-    icon: SiGit,
-    color: '#F05032',
-    gradient: 'from-red-600 to-orange-500'
+    name: 'Node.js',
+    icon: '/icons/nodejs.svg',
+    color: '#339933',
+    gradient: 'from-green-600 to-green-400'
   },
   {
     name: 'PHP',
-    icon: SiPhp,
+    icon: '/icons/php.svg',
     color: '#777BB4',
     gradient: 'from-purple-600 to-purple-400'
   },
   {
     name: 'Supabase',
-    icon: SiSupabase,
+    icon: '/icons/supabase.svg',
     color: '#3ECF8E',
     gradient: 'from-green-400 to-green-300'
   },
+
+  // ================= DATABASE =================
   {
-    name: 'HTML5',
-    icon: SiHtml5,
-    color: '#E34F26',
-    gradient: 'from-orange-500 to-orange-400'
+    name: 'PostgreSQL',
+    icon: '/icons/postgresql.svg',
+    color: '#4169E1',
+    gradient: 'from-blue-600 to-blue-500'
   },
   {
-    name: 'CSS3',
-    icon: SiCss3,
-    color: '#1572B6',
-    gradient: 'from-blue-600 to-blue-400'
+    name: 'MySQL',
+    icon: '/icons/mysql.svg',
+    color: '#4479A1',
+    gradient: 'from-blue-700 to-blue-500'
+  },
+
+  // ================= DEVOPS / TOOLS =================
+  {
+    name: 'Docker',
+    icon: '/icons/docker.svg',
+    color: '#2496ED',
+    gradient: 'from-blue-500 to-blue-400'
   },
   {
     name: 'Vercel',
-    icon: SiVercel,
+    icon: '/icons/vercel.svg',
     color: '#000000',
     gradient: 'from-gray-900 to-gray-700'
   },
-  ];
+  {
+    name: 'Git',
+    icon: '/icons/git.svg',
+    color: '#F05033',
+    gradient: 'from-orange-500 to-red-500'
+  },
+  {
+    name: 'GitHub',
+    icon: '/icons/github.svg',
+    color: '#333333',
+    gradient: 'from-gray-900 to-gray-700'
+  }
+];
