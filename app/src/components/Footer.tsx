@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 'use client';
 
 import Link from "next/link";
@@ -9,7 +7,8 @@ import {
   Github, 
   Linkedin, 
   ArrowUpRight,
-  Sparkles} from "lucide-react";
+  Sparkles
+} from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,18 +35,13 @@ export default function Footer() {
     { name: "Contato", href: "/contact" }
   ];
 
-  const techStack = [
-    "Next.js", "React", "TypeScript", "Tailwind CSS"
-  ];
-
   return (
     <footer className="relative w-full border-t border-border/50 bg-background mt-auto">
-      {/* Background Elements - removidos efeitos complexos inicialmente */}
       
-      <div className="container relative mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      <div className="container relative mx-auto px-4 py-10 md:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
           
-          {/* Brand Section */}
+          {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg bg-primary/10 border border-border">
@@ -55,19 +49,20 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-foreground">tnhz.dev</h3>
-                <p className="text-sm text-muted-foreground">Desenvolvedor Software</p>
+                <p className="text-sm text-muted-foreground">
+                  Desenvolvedor Software
+                </p>
               </div>
             </div>
             
-            <p className="text-sm text-foreground/80">
-              Criando soluções digitais com foco
-              <span className="">em performance e experiência do usuário</span>
+            <p className="text-sm text-foreground/80 leading-relaxed">
+              Criando soluções digitais com foco em performance 
+              e experiência do usuário.
             </p>
-            
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-2">
+          {/* Links */}
+          <div className="space-y-3">
             <h4 className="font-semibold text-foreground flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-primary" />
               Navegação
@@ -78,7 +73,7 @@ export default function Footer() {
                   key={link.name}
                   href={link.href}
                   className="text-sm text-muted-foreground hover:text-foreground 
-                           transition-colors duration-200 hover:underline"
+                           transition-colors hover:underline"
                 >
                   {link.name}
                 </Link>
@@ -86,7 +81,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact & Social */}
+          {/* Contato */}
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground flex items-center gap-2">
               <Mail className="w-4 h-4 text-primary" />
@@ -94,15 +89,13 @@ export default function Footer() {
             </h4>
             
             <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-muted-foreground" />
-                <a 
-                  href="mailto:thomasnhenrique@gmail.com"
-                  className="text-sm text-muted-foreground hover:text-foreground hover:underline"
-                >
-                  thomasnhenrique@gmail.com
-                </a>
-              </div>
+              <a 
+                href="mailto:thomasnhenrique@gmail.com"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline"
+              >
+                <Mail className="w-4 h-4" />
+                thomasnhenrique@gmail.com
+              </a>
               
               <div className="flex items-center gap-2 pt-2">
                 {socialLinks.map((social) => (
@@ -112,9 +105,9 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="p-2 rounded-lg border border-border bg-muted/50 
-                             hover:bg-primary/10 hover:border-primary/30 
-                             transition-all duration-200"
+                    className="p-2 rounded-lg border border-border bg-muted 
+                             hover:bg-primary/10 hover:border-primary/40 
+                             transition-all duration-200 hover:scale-105"
                   >
                     <div className="text-muted-foreground hover:text-primary">
                       {social.icon}
@@ -126,22 +119,21 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-border my-6" />
+        {/* Divider melhorado */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-6" />
 
-        {/* Bottom Bar - SIMPLIFICADA */}
+        {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span>•</span>
-            <span>© {currentYear} tnhz.dev</span>
-          </div>
+          <span className="text-sm text-muted-foreground">
+            © {currentYear} tnhz.dev
+          </span>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-sm text-muted-foreground hover:text-foreground 
-                     flex items-center gap-1 hover:underline"
+                     flex items-center gap-1 transition-all hover:underline"
           >
-            <span>Voltar ao topo</span>
+            Voltar ao topo
             <ArrowUpRight className="w-3 h-3 rotate-90" />
           </button>
         </div>
