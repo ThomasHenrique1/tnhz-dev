@@ -15,10 +15,26 @@ const staggerContainer = {
 };
 
 const stats = [
-  { value: "Full Stack", label: "Perfil Técnico", icon: <Briefcase className="w-5 h-5" /> },
-  { value: "Web Apps", label: "Sistemas Desenvolvidos", icon: <Rocket className="w-5 h-5" /> },
-  { value: "Back-end", label: "Lógica & Dados", icon: <Shield className="w-5 h-5" /> },
-  { value: "Front-end", label: "Interfaces Funcionais", icon: <Code2 className="w-5 h-5" /> },
+  {
+    value: "Aplicações Full Stack",
+    label: "Desenvolvimento completo com frontend, backend e banco",
+    icon: <Briefcase className="w-5 h-5" />,
+  },
+  {
+    value: "React • Next.js • TypeScript",
+    label: "Foco em interfaces modernas e performáticas",
+    icon: <Code2 className="w-5 h-5" />,
+  },
+  {
+    value: "APIs e Regras de Negócio",
+    label: "Node.js e Python com integração real de dados",
+    icon: <Shield className="w-5 h-5" />,
+  },
+  {
+    value: "MySQL • PostgreSQL • Supabase",
+    label: "Modelagem de dados e autenticação segura",
+    icon: <Rocket className="w-5 h-5" />,
+  },
 ];
 
 export function StatsGrid() {
@@ -29,15 +45,16 @@ export function StatsGrid() {
       animate="visible"
       className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
     >
-      {stats.map((stat, index) => (
+      {stats.map((stat) => (
         <motion.div
-          key={index}
+          key={stat.label}
           variants={fadeInUp}
           className="rounded-2xl border border-border/50 bg-gradient-card p-6 text-center"
         >
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 mb-4">
             <div className="text-primary">{stat.icon}</div>
           </div>
+
           <div className="text-2xl font-bold">{stat.value}</div>
           <p className="text-sm text-muted-foreground mt-2">{stat.label}</p>
         </motion.div>
