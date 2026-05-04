@@ -15,24 +15,24 @@ export function ProjectsHero({ projectsCount, technologiesCount }: ProjectsHeroP
       <div className="container relative mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Meu <span className="text-primary">Portfólio</span>
+            Projetos <span className="text-primary">Desenvolvidos</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Uma coleção de projetos onde transformei ideias em soluções reais.
-            Cada projeto conta uma história de desafios superados e objetivos alcançados.
+            Projetos focados em desenvolvimento web full stack, com ênfase em
+            arquitetura, regras de negócio e integração com backend.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Calendar className="w-4 h-4 text-primary" />
-              <span>{projectsCount} Projetos Realizados</span>
+              <span>{projectsCount} projetos</span>
             </div>
 
-            {technologiesCount > 0 && (
+            {!!technologiesCount && (
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
                 <Tag className="w-4 h-4 text-secondary" />
-                <span>{technologiesCount} Tecnologias Utilizadas</span>
+                <span>{technologiesCount} tecnologias</span>
               </div>
             )}
           </div>
