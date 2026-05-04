@@ -9,10 +9,11 @@ export function ProjectsCTA() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Interessado em trabalharmos juntos?
+            Gostou de algum projeto?
           </h2>
+          
           <p className="text-muted-foreground mb-8">
-            Vamos conversar sobre como posso ajudar no seu próximo projeto.
+            Entre em contato ou veja mais do meu trabalho.
           </p>
           <Button
             asChild
