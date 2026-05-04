@@ -9,37 +9,37 @@ interface Specialty {
 
 const specialties: Specialty[] = [
   {
-    icon: <Code2 className="w-10 h-10" />,
+    icon: <Code2 className="w-6 h-6" />,
     title: "Desenvolvimento Full Stack",
     description: "Criação de aplicações web com foco em organização, escalabilidade e manutenção.",
     features: ["React / Next.js", "Node.js", "APIs REST", "Banco de Dados"]
   },
   {
-    icon: <Zap className="w-10 h-10" />,
+    icon: <Zap className="w-6 h-6" />,
     title: "Performance e Qualidade",
     description: "Preocupação constante com performance, acessibilidade e boas práticas.",
     features: ["Core Web Vitals", "Otimização de Assets", "Código Limpo", "Boas Práticas"]
   },
   {
-    icon: <Shield className="w-10 h-10" />,
+    icon: <Shield className="w-6 h-6" />,
     title: "Arquitetura e Segurança",
     description: "Estruturação de projetos com foco em segurança básica e organização.",
     features: ["Autenticação", "Autorização", "Boas Práticas", "Controle de Acesso"]
   },
   {
-    icon: <Palette className="w-10 h-10" />,
+    icon: <Palette className="w-6 h-6" />,
     title: "UI e Experiência",
     description: "Interfaces funcionais, consistentes e fáceis de manter.",
     features: ["Componentização", "Responsividade", "Design System", "Acessibilidade"]
   },
   {
-    icon: <BarChart3 className="w-10 h-10" />,
+    icon: <BarChart3 className="w-6 h-6" />,
     title: "Observabilidade Básica",
     description: "Acompanhamento simples de comportamento e erros.",
     features: ["Logs", "Métricas", "Monitoramento", "Debug"]
   },
   {
-    icon: <Globe className="w-10 h-10" />,
+    icon: <Globe className="w-6 h-6" />,
     title: "Integrações",
     description: "Consumo e integração com APIs e serviços externos.",
     features: ["APIs REST", "Webhooks", "Serviços de Terceiros", "Integrações"]
@@ -48,43 +48,55 @@ const specialties: Specialty[] = [
 
 export default function Specialties() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-background via-muted/20 to-background">
+    <section className="relative py-20 bg-gradient-to-b from-background via-muted/20 to-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Áreas de Atuação
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Tecnologias e práticas que utilizo no desenvolvimento de aplicações.
+          <p className="text-lg text-muted-foreground">
+            Tecnologias e práticas aplicadas no desenvolvimento de aplicações.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {specialties.map((service, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-3xl border border-border/50 bg-gradient-card backdrop-blur-sm p-8">
-              <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 bg-gradient-to-br from-primary/10 to-secondary/5 border border-border/50">
-                <div className="text-primary">{service.icon}</div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {specialties.map((service) => (
+            <div 
+              key={service.title}
+              className="group relative rounded-2xl border border-border/50 
+                         bg-gradient-card p-6 transition-all duration-300
+                         hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+            >
+              {/* Ícone */}
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl mb-4 
+                              bg-primary/10 border border-border/50 text-primary">
+                {service.icon}
               </div>
 
-              <h3 className="text-2xl font-bold mb-4">
+              {/* Título */}
+              <h3 className="text-lg font-semibold mb-2">
                 {service.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              {/* Descrição */}
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {service.description}
               </p>
 
-              <ul className="space-y-3">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-foreground/80">{feature}</span>
+              {/* Features */}
+              <ul className="space-y-2">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-xs">
+                    <span className="w-1 h-1 rounded-full bg-primary" />
+                    <span className="text-foreground/70">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
