@@ -29,47 +29,45 @@ const processSteps: ProcessStep[] = [
 
 export default function DevelopmentProcess() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Processo de Desenvolvimento
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Um fluxo de trabalho focado em entender o problema, estruturar bem a solução
             e entregar código claro, funcional e evolutivo.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
-          {processSteps.map((step, index) => (
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+          {processSteps.map((step) => (
             <div
-              key={index}
-              className="group relative overflow-hidden rounded-3xl border border-border/50 
-                         bg-gradient-card backdrop-blur-sm p-8
-                         hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10
-                         transition-all duration-500"
+              key={step.step}
+              className="group relative overflow-hidden rounded-2xl border border-border/50 
+                         bg-gradient-card p-6
+                         hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10
+                         transition-all duration-300"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 
-                           opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              />
-
-              <div className="relative flex items-start gap-6">
+              <div className="relative flex items-start gap-4">
+                
+                {/* Número */}
                 <div
-                  className="flex items-center justify-center w-14 h-14 rounded-2xl 
-                             gradient-primary text-primary-foreground font-bold text-xl shrink-0"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl 
+                             gradient-primary text-primary-foreground font-semibold text-sm shrink-0"
                 >
                   {step.step}
                 </div>
 
+                {/* Conteúdo */}
                 <div>
-                  <h3 className="text-2xl font-bold mb-3">
+                  <h3 className="text-xl font-semibold mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
