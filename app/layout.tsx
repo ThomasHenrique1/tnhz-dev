@@ -1,9 +1,8 @@
-// app/layout.tsx
-
 import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/themes/ThemeProvider";
 import Navbar from "@/app/src/components/Navbar";
@@ -18,7 +17,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "tnhz.dev — Portfólio",
   description: "Portfólio técnico — projetos, case studies e contato.",
-   icons: {
+  icons: {
     icon: "/ICON.png",
     shortcut: "/ICON.png",
     apple: "/ICON.png",
@@ -38,11 +37,25 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem  
-        >
+        {/* SCRIPT CORRETO */}
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem("theme");
+                  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                  const theme = stored || (systemDark ? "dark" : "light");
+                  document.documentElement.classList.add(theme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+
+        <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="grow">{children}</main>
