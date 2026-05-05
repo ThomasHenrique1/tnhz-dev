@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // components/project/ProjectLinks.tsx
-import { ExternalLink, Github, Figma, FileText, Globe } from "lucide-react";
+import { Github, Figma, FileText, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ProjectLinksProps {
@@ -11,8 +10,42 @@ interface ProjectLinksProps {
 }
 
 export function ProjectLinks({ githubUrl, liveUrl, figmaUrl, docsUrl }: ProjectLinksProps) {
-  const hasLinks = githubUrl || liveUrl || figmaUrl || docsUrl;
-  if (!hasLinks) return null;
+  const links = [
+    {
+      url: githubUrl,
+      label: "Código Fonte",
+      icon: Github,
+      variant: "outline" as const,
+      className:
+        "border-primary/30 hover:border-primary/50 hover:bg-primary/10",
+    },
+    {
+      url: liveUrl,
+      label: "Ver ao Vivo",
+      icon: Globe,
+      variant: "default" as const,
+      className:
+        "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/25",
+    },
+    {
+      url: figmaUrl,
+      label: "Design (Figma)",
+      icon: Figma,
+      variant: "outline" as const,
+      className:
+        "border-pink-500/30 hover:border-pink-500/50 hover:bg-pink-500/10",
+    },
+    {
+      url: docsUrl,
+      label: "Documentação",
+      icon: FileText,
+      variant: "outline" as const,
+      className:
+        "border-blue-500/30 hover:border-blue-500/50 hover:bg-blue-500/10",
+    },
+  ].filter(link => link.url);
+
+  if (links.length === 0) return null;
 
   return (
     <div className="pt-12 pb-8 animate-fade-up">
@@ -24,82 +57,27 @@ export function ProjectLinks({ githubUrl, liveUrl, figmaUrl, docsUrl }: ProjectL
               Acesse todos os recursos relacionados a este projeto.
             </p>
           </div>
-          
+
           <div className="flex flex-wrap gap-3 w-full lg:w-auto">
-            {githubUrl && (
-              <Button 
-                asChild 
-                variant="outline"
+            {links.map(({ url, label, icon: Icon, variant, className }) => (
+              <Button
+                key={label}
+                asChild
+                variant={variant}
                 size="lg"
-                className="gap-3 border-primary/30 hover:border-primary/50 hover:bg-primary/10 group transition-all duration-300 hover:scale-105"
+                className={`gap-3 group transition-all duration-300 hover:scale-105 ${className}`}
               >
-                <a 
-                  href={githubUrl} 
-                  target="_blank" 
+                <a
+                  href={url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"
                 >
-                  <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span className="font-semibold">Código Fonte</span>
+                  <Icon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  <span className="font-semibold">{label}</span>
                 </a>
               </Button>
-            )}
-            
-            {liveUrl && (
-              <Button 
-                asChild 
-                size="lg"
-                className="gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/25 group transition-all duration-300 hover:scale-105"
-              >
-                <a 
-                  href={liveUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span className="font-semibold">Ver ao Vivo</span>
-                </a>
-              </Button>
-            )}
-            
-            {figmaUrl && (
-              <Button 
-                asChild 
-                variant="outline"
-                size="lg"
-                className="gap-3 border-pink-500/30 hover:border-pink-500/50 hover:bg-pink-500/10 group transition-all duration-300 hover:scale-105"
-              >
-                <a 
-                  href={figmaUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Figma className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span className="font-semibold">Design (Figma)</span>
-                </a>
-              </Button>
-            )}
-            
-            {docsUrl && (
-              <Button 
-                asChild 
-                variant="outline"
-                size="lg"
-                className="gap-3 border-blue-500/30 hover:border-blue-500/50 hover:bg-blue-500/10 group transition-all duration-300 hover:scale-105"
-              >
-                <a 
-                  href={docsUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <FileText className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span className="font-semibold">Documentação</span>
-                </a>
-              </Button>
-            )}
+            ))}
           </div>
         </div>
       </div>
