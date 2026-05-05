@@ -1,5 +1,5 @@
 // components/project/ProjectHeader.tsx
-import { Sparkles, Calendar, Clock, Users, Tag, Code, Layers, User } from "lucide-react";
+import { Sparkles, Calendar, Tag, Code, Layers, User } from "lucide-react";
 
 interface ProjectHeaderProps {
   title: string;
@@ -7,8 +7,6 @@ interface ProjectHeaderProps {
   featured?: boolean;
   status?: string;
   date?: string;
-  duration?: string;
-  team?: string;
   tags?: string[];
   metadata?: {
     category?: string;
@@ -24,8 +22,6 @@ export function ProjectHeader({
   featured,
   status,
   date,
-  duration,
-  team,
   tags = [],
   metadata
 }: ProjectHeaderProps) {
@@ -66,7 +62,7 @@ export function ProjectHeader({
         </span>
       </h1>
 
-      {/* Descrição curta */}
+      {/* Descrição */}
       {short && (
         <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl animate-fade-up animate-delay-100">
           {short}
@@ -89,29 +85,6 @@ export function ProjectHeader({
             delay={0}
           />
         )}
-
-        {/* Duração */}
-        {duration && (
-          <MetadataCard
-            icon={<Clock className="w-5 h-5" />}
-            label="Duração"
-            value={duration}
-            color="purple"
-            delay={100}
-          />
-        )}
-
-        {/* Equipe */}
-        {team && (
-          <MetadataCard
-            icon={<Users className="w-5 h-5" />}
-            label="Equipe"
-            value={team}
-            color="emerald"
-            delay={200}
-          />
-        )}
-
         {/* Tags count */}
         {tags.length > 0 && (
           <MetadataCard
